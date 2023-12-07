@@ -9,6 +9,8 @@ public class Calculator {
     private Double num2;
     private String operator;
 
+    public Logger logger;
+
     // getter and setter
     public Double getNum1() {
         return num1;
@@ -20,6 +22,11 @@ public class Calculator {
         } catch (NullPointerException e) {
             this.num1 = 0d;
         }
+    }
+
+    public Calculator() {
+        logger = new Logger();
+        logger.setLogLevel(LogLevel.TRACE);
     }
 
     public Double getNum2() {
@@ -42,6 +49,7 @@ public class Calculator {
     // Add method
     public Double add() {
         try {
+            logger.log(LogLevel.INFO, num1 + " + " + num2 + " = " + num2 + num1);
             return num1 + num2;
         } catch (NullPointerException e) {
             return 0d;
@@ -51,6 +59,7 @@ public class Calculator {
     // Subtract method
     public Double subtract() {
         try {
+            logger.log(LogLevel.INFO, num1 + " - " + num2 + " = " + num2 + num1);
             return num1 - num2;
         } catch (NullPointerException e) {
             return 0d;
@@ -60,6 +69,7 @@ public class Calculator {
     // Multiply method
     public Double multiply() {
         try {
+            logger.log(LogLevel.INFO, num1 + " * " + num2 + " = " + num2 + num1);
             return num1 * num2;
         } catch (NullPointerException e) {
             return 0d;
@@ -70,8 +80,10 @@ public class Calculator {
     // Divide method
     public Double divide() {
         try {
+            logger.log(LogLevel.INFO, num1 + " / " + num2 + " = " + num2 + num1);
             return num1 / num2;
-        } catch (NullPointerException e) {
+        } catch (ArithmeticException e) {
+            logger.log(LogLevel.ERROR, "Cannot divide by 0 :(");
             System.out.println(e.toString());
             return 0d;
 
