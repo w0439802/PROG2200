@@ -4,6 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
+/**
+ * @usage Calculator class used for all logical
+ * side of the program. Deals with calculation
+ * checking values and other.
+ */
 public class Calculator {
     private Double num1;
     private Double num2;
@@ -24,6 +29,10 @@ public class Calculator {
         }
     }
 
+    /**
+     * @usage Constructor to call our logger to
+     * track the information
+     */
     public Calculator() {
         logger = new Logger();
         logger.setLogLevel(LogLevel.TRACE);
@@ -47,6 +56,11 @@ public class Calculator {
 
 
     // Add method
+    /**
+     * @usage calculation to calculate the total
+     * when adding two numbers selected
+     * @return
+     */
     public Double add() {
         try {
             logger.log(LogLevel.INFO, num1 + " + " + num2 + " = " + num2 + num1);
@@ -57,6 +71,12 @@ public class Calculator {
     }
 
     // Subtract method
+
+    /**
+     * @usage calculation to calculate the total
+     * when subtracting two numbers selected
+     * @return
+     */
     public Double subtract() {
         try {
             logger.log(LogLevel.INFO, num1 + " - " + num2 + " = " + num2 + num1);
@@ -67,6 +87,11 @@ public class Calculator {
     }
 
     // Multiply method
+    /**
+     * @usage calculation to calculate the total
+     * when multiplying two numbers selected
+     * @return
+     */
     public Double multiply() {
         try {
             logger.log(LogLevel.INFO, num1 + " * " + num2 + " = " + num2 + num1);
@@ -78,6 +103,13 @@ public class Calculator {
     }
 
     // Divide method
+    /**
+     * @usage calculation to calculate the total
+     * when dividing two numbers selected, it will also
+     * check to see if the 2nd number is possible to
+     * divide from
+     * @return
+     */
     public Double divide() {
         try {
             logger.log(LogLevel.INFO, num1 + " / " + num2 + " = " + num2 + num1);
@@ -95,6 +127,12 @@ public class Calculator {
 
 
     // Perform Calculation
+
+    /**
+     * @usage Will check to see what the users operator
+     * is and will preform the necessairy calculation
+     * @return
+     */
     public Double performCalculation() {
         switch (operator) {
             case "+":

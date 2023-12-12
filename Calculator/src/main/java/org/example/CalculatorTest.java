@@ -3,6 +3,11 @@ package org.example;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+
+/**
+ * @usage Used to Test if the calculator functions work
+ *        as inteded and without any sort of bugs
+ */
 public class CalculatorTest {
 
 

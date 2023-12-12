@@ -1,5 +1,10 @@
 package org.example;
 
+
+/**
+ * @usage Level of loggings that can be used in the
+ * testing area
+ */
 public enum LogLevel {
     TRACE(1),
     DEBUG(2),

@@ -35,6 +35,12 @@ public class CalcGUI {
     }
 
 
+    /**
+     * @usage Sets up the main display for the
+     * calculator by setting the size, rules and
+     * actions to be performed depending on what
+     * button is pressed.
+     */
     public CalcGUI() {
         mainFrame = new JFrame("Calculator");
         mainFrame.setSize(400,400);
@@ -42,6 +48,10 @@ public class CalcGUI {
         mainFrame.setContentPane(panelMain);
         mainFrame.setVisible(true);
 
+        /**
+         * @usage Checks to see if a button is
+         * pressed.
+         */
         ActionListener numListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -53,6 +63,10 @@ public class CalcGUI {
                 }
             }
         };
+        /**
+         * @usage sets the button presssed to the value actually
+         * pressed and will check to see if they are correct
+         */
         ActionListener operatorListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -78,6 +92,10 @@ public class CalcGUI {
             }
         };
 
+        /**
+         * @usage Used to clear out the values if the
+         * clear button is pressed
+         */
         clear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -101,6 +119,9 @@ public class CalcGUI {
         addButton.addActionListener(operatorListener);
         divideButton.addActionListener(operatorListener);
 
+        /**
+         * @usage Used when the user wants to finish the caluclations
+         */
         equals.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -111,6 +132,9 @@ public class CalcGUI {
                 num1Textfield.setText(result.toString());
             }
         });
+        /**
+         * @usage Used when the user wants to go back a character
+         */
         backspace.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -122,6 +146,9 @@ public class CalcGUI {
 
             }
         });
+        /**
+         * @usage used when the user wants to put in a period
+         */
         period.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
